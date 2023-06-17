@@ -20,27 +20,28 @@ const Footer = () => {
         </div>
 
         <Image
-          src="images/icons/footer-line.svg"
+          src="/images/icons/footer-line.svg"
           alt="footer line"
-          height={2}
-          width={1280}
+          width="1280"
+          height="2"
+          style={{ width: "auto", height: "auto" }}
         />
         <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0">
           <div className="flex space-x-8">
             <Image
-              src="images/icons/icon-github.svg"
+              src="/images/icons/icon-github.svg"
               width={26}
               height={20}
               alt="github icon"
             />
             <Image
-              src="images/icons/icon-gt.svg"
+              src="/images/icons/icon-gt.svg"
               width={26}
               height={20}
               alt="gt icon"
             />
             <Image
-              src="images/icons/icon-youtube.svg"
+              src="/images/icons/icon-youtube.svg"
               width={26}
               height={20}
               alt="youtube icon"

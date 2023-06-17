@@ -20,6 +20,7 @@ module.exports = {
         },
         component: {
           cyanlight: "#C3DCE3",
+          cyandark: "#2B788B",
           pinkdark: "#945069",
           pinklight: "#F2D4DC",
           greylight: "#F6F5F4",
@@ -33,6 +34,10 @@ module.exports = {
           yellow: "#C4A24C",
           orange: "#CB5B43",
         },
+      },
+
+      screens: {
+        "2lg": "1160px",
       },
     },
   },

@@ -6,18 +6,20 @@ import { ArrowSmallRightIcon } from "@heroicons/react/24/solid";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
+import paths from "../paths";
+
 const navLinks = [
-  { title: "Home", id: "home" },
-  { title: "TextBook", id: "textbook" },
-  { title: "Statistics", id: "statistics" },
+  { title: "Home", id: `${paths.home}` },
+  { title: "TextBook", id: `${paths.textbooks}` },
+  { title: "Statistics", id: `${paths.statistics}` },
 ];
 
 const navLinksMobile = [
-  { title: "Home", id: "home" },
-  { title: "TextBook", id: "textbook" },
-  { title: "Statistics", id: "statistics" },
-  { title: "Spring", id: "sprint" },
-  { title: "Audio-call", id: "audiocall" },
+  { title: "Home", id: `${paths.home}` },
+  { title: "TextBook", id: `${paths.textbooks}` },
+  { title: "Statistics", id: `${paths.statistics}` },
+  { title: "Sprint", id: `${paths.sprint}` },
+  { title: "Audio-call", id: `${paths.audiocall}` },
 ];
 
 const Nav = () => {
@@ -51,18 +53,18 @@ const Nav = () => {
               <div
                 className={`${
                   games
-                    ? "flex flex-col space-y-2 p-5 bg-white rounded-lg absolute w-36"
+                    ? "flex flex-col space-y-2 p-5 bg-white rounded-lg absolute w-36 z-10"
                     : "hidden"
                 }`}>
                 <Link
-                  href="/"
+                  href={paths.sprint}
                   aria-label="link to sprint game"
                   className="flex items-center">
                   <span> Sprint</span>
                   <ArrowSmallRightIcon className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/"
+                  href={paths.audiocall}
                   aria-label="link to sprint game"
                   className="flex items-center">
                   <span> Audio-call</span>
