@@ -24,7 +24,7 @@ const Footer = () => {
           alt="footer line"
           width="1280"
           height="2"
-          style={{ width: "auto", height: "auto" }}
+          style={{ width: "1280px", height: "auto" }}
         />
         <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0">
           <div className="flex space-x-8">

@@ -72,8 +72,10 @@ const HeaderLevel = () => {
               <button
                 onClick={() => setSelectedLvl(lvl.id)}
                 className={`${
-                  selectedLvl === lvl.id ? "opacity-100" : "opacity-50"
-                }  !w-full space-x-2 flex items-center justify-center `}>
+                  selectedLvl === lvl.id
+                    ? "opacity-100 border-b-2 border-b-black"
+                    : "opacity-50 border-b-0"
+                }  !w-full space-x-2 flex items-center justify-center py-2`}>
                 <span className="heading font-semibold text-base sm:text-xl">
                   {lvl.text}
                 </span>

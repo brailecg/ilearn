@@ -8,22 +8,28 @@ const randomImage = imageList[Math.floor(Math.random() * 2)];
 
 const BookSectionItem = ({ showWords, showButton }) => {
   return (
-    <div className="flex flex-col md:flex-row overflow-hidden rounded-xl shadow-md">
+    <div
+      className={`${
+        showWords
+          ? "grid-flow-row w-[337px] "
+          : "max-w-[300px] xs:max-w-[337px]  mx-auto md:flex md:max-w-full md:flex-row"
+      }bg-white overflow-hidden rounded-xl shadow-md`}>
       <Image
-        className="-z-1 mx-auto"
+        className="-z-1"
         src={`/images/textbook/${randomImage}.png`}
-        width={300}
-        height={100}
+        width={337}
+        height={336}
         alt="book one"
+        style={{ minWidth: "337px", maxHeight: "336px" }}
       />
-      <div className="p-8 grow bg-white space-y-2">
+      <div className={`${showButton ? "p-6" : "p-8"} grow space-y-2`}>
         <div className="flex justify-between">
-          <div className="flex heading text-3xl space-x-2">
+          <div className="flex flex-col space-x-0 md:space-x-2 md:flex-row heading text-3xl ">
             <h2>remark </h2>
-            <p>/</p>
+            <p className="hidden md:block">/</p>
             <h2 className=" text-component-greydark">note</h2>
           </div>
-          <div className=" bg-component-greylight p-2 rounded-lg">
+          <div className=" bg-component-greylight p-2 rounded-lg max-h-10">
             <SvgIconNote width={20} height={20} fill="#757575" />
           </div>
         </div>
@@ -65,7 +71,7 @@ const BookSectionItem = ({ showWords, showButton }) => {
               true
                 ? " bg-[#c1d7c5] text-component-green"
                 : "bg-component-green text-white"
-            } px-3 py-2 rounded-full font-semibold`}>
+            } px-3 py-2 rounded-full font-semibold w-fit`}>
             Remove from learned
           </button>
           <button
@@ -73,7 +79,7 @@ const BookSectionItem = ({ showWords, showButton }) => {
               true
                 ? " bg-[#ecc4bb] text-component-orange"
                 : " bg-component-orange text-white"
-            } px-3 py-2 rounded-full font-semibold`}>
+            } px-3 py-2 rounded-full font-semibold w-fit`}>
             Add to dictionary
           </button>
         </div>

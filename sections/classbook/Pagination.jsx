@@ -70,7 +70,11 @@ const Pagination = (props) => {
       {paginationRange.map((pageNumber, index) => {
         // If the pageItem is a DOT, render the DOTS unicode character
         if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">&#8230;</li>;
+          return (
+            <li key={index} className="pagination-item dots">
+              &#8230;
+            </li>
+          );
         }
 
         // Render our Page Pills
@@ -104,8 +108,8 @@ export default Pagination;
 const range = (start, end) => {
   let length = end - start + 1;
   /*
-        Create an array of certain length and set the elements within it from
-      start value to end value.
+    Create an array of certain length and set the elements within it from
+    start value to end value.
     */
   return Array.from({ length }, (_, idx) => idx + start);
 };
