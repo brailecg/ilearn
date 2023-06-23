@@ -12,3 +12,11 @@
 .heading {
   font-family: var(--font-delagothic);
 }
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 import Layout from "../../../components/Layout";
-import styles from "./level.module.css";
+import styles from "../sprint/level.module.css";
 import paths from "../../../paths";
 
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
@@ -32,7 +32,7 @@ const SvgCircle = (props) => (
   </svg>
 );
 
-const SvgIconNote = (props) => (
+export const SvgIconNote = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={props.width}
@@ -43,7 +43,14 @@ const SvgIconNote = (props) => (
     />
   </svg>
 );
-
+const SvgIconHeart = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={26} height={24} fill="none">
+    <path
+      {...props}
+      d="M19.112.608a6.29 6.29 0 0 1 3.104.8c.981.512 1.77 1.29 2.368 2.336.597 1.045.896 2.304.896 3.776 0 1.941-.48 3.925-1.44 5.952-.939 2.027-2.347 3.936-4.224 5.728-1.877 1.77-4.139 3.264-6.784 4.48-2.667-1.216-4.939-2.71-6.816-4.48-1.877-1.77-3.296-3.659-4.256-5.664C1.021 11.531.552 9.546.552 7.584c0-1.493.299-2.763.896-3.808s1.387-1.835 2.368-2.368a6.47 6.47 0 0 1 3.136-.8c1.365 0 2.57.459 3.616 1.376 1.067.896 1.888 2.144 2.464 3.744.555-1.6 1.365-2.848 2.432-3.744 1.088-.917 2.304-1.376 3.648-1.376Z"
+    />
+  </svg>
+);
 const knowList = [
   { id: 1, word: "lone", meaning: "solitaire" },
   { id: 2, word: "anniversary", meaning: "anniversaire" },
@@ -140,7 +147,7 @@ const WordListComponent = () => {
   );
 };
 
-const Tasks = () => {
+const AudioCallTasks = () => {
   return (
     <Layout>
       <div className="py-10 sm:py-16">
@@ -173,8 +180,11 @@ const Tasks = () => {
                 <div className="flex space-x-2 justify-start   w-full">
                   <div className="flex justify-center w-full relative">
                     <div className="absolute w-full h-full flex flex-col justify-center items-center">
-                      <p className=" font-semibold  ">retrieved</p>
-                      <p className="heading text-2xl sm:text-4xl ">240</p>
+                      <p className=" font-semibold  ">remains</p>
+                      <p className="flex items-center heading text-2xl sm:text-4xl ">
+                        <SvgIconHeart fill={"#A95151"} />
+                        <span>4</span>{" "}
+                      </p>
                       <p className=" text-font-greydark">points</p>
                     </div>
                     <SvgCircle
@@ -217,4 +227,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default AudioCallTasks;

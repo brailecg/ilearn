@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const CIRCLE_DASHARRAY = 1500;
 
-const SvgComponent = (props) => (
+export const SvgComponent = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={21} height={21} {...props}>
     <path
       fill={props.fill}

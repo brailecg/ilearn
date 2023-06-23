@@ -10,13 +10,13 @@ import paths from "../paths";
 
 const navLinks = [
   { title: "Home", id: `${paths.home}` },
-  { title: "TextBook", id: `${paths.textbooks}` },
+  { title: "TextBook", id: `${paths.classbook}` },
   { title: "Statistics", id: `${paths.statistics}` },
 ];
 
 const navLinksMobile = [
   { title: "Home", id: `${paths.home}` },
-  { title: "TextBook", id: `${paths.textbooks}` },
+  { title: "TextBook", id: `${paths.classbook}` },
   { title: "Statistics", id: `${paths.statistics}` },
   { title: "Sprint", id: `${paths.sprint}` },
   { title: "Audio-call", id: `${paths.audiocall}` },

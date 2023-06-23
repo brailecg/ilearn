@@ -1,87 +1,50 @@
 import React, { useState } from "react";
-
-import Layout from "../../../components/Layout";
 import Image from "next/image";
 import Link from "next/link";
 
+import Layout from "../../../components/Layout";
 import paths from "../../../paths";
-export const sprintLevel = [
-  {
-    id: "A1",
-    textColor: "text-component-green",
-    borderColor: "border-component-green",
-    bg: "bg-component-green",
-  },
-  {
-    id: "A2",
-    textColor: "text-component-yellow",
-    borderColor: "border-component-yellow",
-    bg: "bg-component-yellow",
-  },
-  {
-    id: "B1",
-    textColor: "text-component-orange",
-    borderColor: "border-component-orange",
-    bg: "bg-component-orange",
-  },
-  {
-    id: "B2",
-    textColor: "text-component-red",
-    borderColor: "border-component-red",
-    bg: "bg-component-red",
-  },
-  {
-    id: "C1",
-    textColor: "text-component-pinkdark",
-    borderColor: "border-component-pinkdark",
-    bg: "bg-component-pinkdark",
-  },
-  {
-    id: "C2",
-    textColor: "text-component-cyan",
-    borderColor: "border-component-cyan",
-    bg: "bg-component-cyan",
-  },
-];
-const Sprint = () => {
-  const [level, setLevel] = useState("");
+import { sprintLevel } from "../sprint";
 
+const AudioCall = () => {
+  const [level, setLevel] = useState("");
   return (
     <Layout>
       <div className="flex flex-col items-center sm:items-start sm:flex-row mx-2 sm:mx-8 lg:mx-auto max-w-5xl  bg-bg-white my-8 py-4 sm:py-0 rounded-3xl relative">
-        <div className="hidden sm:flex sm:w-1/3">
+        <div className="hidden sm:p-4 sm:flex sm:w-1/3">
           <Image
-            src="/images/games/sprint/game-hero-one.png"
-            width={0}
-            height={0}
+            src="/images/games/audiocall/game-audiocall.png"
+            width={254}
+            height={408}
             className="w-full h-auto md:py-12 md:px-8"
-            alt="sprint image"
+            alt="audiocall image"
           />
         </div>
-        <div className="flex w-20 h-20 p-2 bg-component-pinklight mb-4 sm:hidden border border-component-pinklight rounded-full">
+        <div className="flex w-20 h-20 p-2 bg-component-cyandark mb-4 sm:hidden rounded-full">
           <Image
-            src="/images/home/home-shoes.svg"
+            src="/images/home/home-mic.svg"
             width={80}
             height={80}
             className=" "
-            alt="sprint shoes"
+            alt="audiocall mic"
           />
         </div>
-
         <div className="w-full sm:w-2/3 my-auto">
           <div className="flex justify-center sm:justify-start items-center space-x-4">
-            <h3 className="heading text-xl md:text-5xl font-bold">Sprint</h3>
+            <h3 className="heading text-xl md:text-5xl font-bold">
+              Audio-call
+            </h3>
             <Link
-              href={paths.speedtask}
+              href={paths.audiocalltask}
               className=" text-font-cyandark font-semibold bg-component-cyanlight text-xs md:text-base px-2 sm:px-4 py-2 rounded-xl">
-              Speed Task
+              Audtion Task
             </Link>
           </div>
           <p className="text-center px-2 sm:px-0 text-xs sm:text-base sm:text-left text-font-greydark mt-4 mb-8 max-w-lg mx-auto sm:mx-0">
-            Trains the skill of fast translation. You have to choose if the
-            translation corresponds to the suggested word.
+            The Audio-Call training develops vocabulary and improves listening
+            comprehension.
           </p>
-          <div className="">
+          <div>
             <p className="text-center sm:text-start md:px-0 text-font-greydark mb-4">
               Choose Level:
             </p>
@@ -106,7 +69,7 @@ const Sprint = () => {
             <div className="flex justify-center sm:justify-start">
               <Link
                 disabled
-                href={`${paths.sprint}/${level.toLocaleLowerCase()}`}
+                href={`${paths.audiocall}/${level.toLocaleLowerCase()}`}
                 className="p-2 sm:p-3 md:p-4 bg-component-cyan rounded-full text-white font-semibold">
                 Get Started
               </Link>
@@ -120,4 +83,4 @@ const Sprint = () => {
   );
 };
 
-export default Sprint;
+export default AudioCall;
