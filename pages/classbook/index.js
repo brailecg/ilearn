@@ -19,7 +19,6 @@ const Classbook = () => {
         />
         <HeaderLevel />
         <BookSection showWords={showWords} showButton={showButton} />
-        <div>Pagination</div>
       </div>
     </Layout>
   );

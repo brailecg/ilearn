@@ -3,12 +3,15 @@ import React from "react";
 
 import { SvgIconNote } from "../../pages/games/audiocall/tasks";
 
+const imageList = ["book-two", "book-three"];
+const randomImage = imageList[Math.floor(Math.random() * 2)];
+
 const BookSectionItem = ({ showWords, showButton }) => {
   return (
     <div className="flex flex-col md:flex-row overflow-hidden rounded-xl shadow-md">
       <Image
         className="-z-1 mx-auto"
-        src={"/images/textbook/book-one.png"}
+        src={`/images/textbook/${randomImage}.png`}
         width={300}
         height={100}
         alt="book one"
