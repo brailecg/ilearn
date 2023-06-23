@@ -12,10 +12,16 @@ const HeaderSettings = ({
   setShowWords,
   showButton,
   setShowButtons,
+  changeTextbookOrDictionary,
 }) => {
   const [settingBook, setSettingBook] = useState("textbook");
   const [showCheckbox, setShowCheckbox] = useState(false);
   const dropDownRef = useRef();
+
+  const changeBook = (book) => {
+    setSettingBook(book);
+    changeTextbookOrDictionary(book);
+  };
 
   useEffect(() => {
     const closeDropdown = (e) => {
@@ -31,7 +37,7 @@ const HeaderSettings = ({
     <div className="flex flex-col items-center space-y-4 md:space-y-0 md:flex-row sm:justify-between bg-white px-2 sm:px-4 py-4 rounded-xl shadow-md">
       <div className="flex items-center space-x-4 px-2 sm:px-0">
         <button
-          onClick={() => setSettingBook("textbook")}
+          onClick={() => changeBook("textbook")}
           className={`flex items-center space-x-2 ${
             settingBook === "textbook" ? "" : "text-component-greyicon"
           }`}>
@@ -40,7 +46,7 @@ const HeaderSettings = ({
         </button>
         <div className=" text-component-greyicon">|</div>
         <button
-          onClick={() => setSettingBook("dictionary")}
+          onClick={() => changeBook("dictionary")}
           className={`flex items-center space-x-2 ${
             settingBook === "dictionary" ? "" : "text-component-greyicon"
           }`}>

@@ -8,6 +8,9 @@ import BookSection from "../../sections/classbook/BookSection";
 const Classbook = () => {
   const [showWords, setShowWords] = useState(false);
   const [showButton, setShowButtons] = useState(false);
+
+  const [book, setBook] = useState("textbook");
+
   return (
     <Layout>
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-8">
@@ -16,9 +19,14 @@ const Classbook = () => {
           setShowButtons={setShowButtons}
           showWords={showWords}
           setShowWords={setShowWords}
+          changeTextbookOrDictionary={setBook}
         />
         <HeaderLevel />
-        <BookSection showWords={showWords} showButton={showButton} />
+        <BookSection
+          book={book}
+          showWords={showWords}
+          showButton={showButton}
+        />
       </div>
     </Layout>
   );

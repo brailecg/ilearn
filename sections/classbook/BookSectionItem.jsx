@@ -11,7 +11,7 @@ const BookSectionItem = ({ showWords, showButton }) => {
     <div
       className={`${
         showWords
-          ? "grid-flow-row w-[337px] "
+          ? "grid-flow-row max-w-[337px] "
           : "max-w-[300px] xs:max-w-[337px]  mx-auto md:flex md:max-w-full md:flex-row"
       }bg-white overflow-hidden rounded-xl shadow-md`}>
       <Image
