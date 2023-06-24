@@ -52,8 +52,8 @@ const Sprint = () => {
         <div className="hidden sm:flex sm:w-1/3">
           <Image
             src="/images/games/sprint/game-hero-one.png"
-            width={0}
-            height={0}
+            width={250}
+            height={400}
             className="w-full h-auto md:py-12 md:px-8"
             alt="sprint image"
           />
