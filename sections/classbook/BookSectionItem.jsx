@@ -16,7 +16,7 @@ const BookSectionItem = ({ showWords, showButton }) => {
       }bg-white overflow-hidden rounded-xl shadow-md`}>
       <Image
         className="-z-1"
-        src={`/images/textbook/${randomImage}.png`}
+        src={`/images/textbook/${imageList[0]}.png`}
         width={337}
         height={336}
         alt="book one"

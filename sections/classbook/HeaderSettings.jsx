@@ -80,6 +80,7 @@ const HeaderSettings = ({
           </p>
         </button>
         <button
+          ref={dropDownRef}
           onClick={() => setShowCheckbox((prev) => !prev)}
           className="p-2 rounded-xl bg-component-cyandark">
           <Cog8ToothIcon className="w-4 sm:w-6 h-4 sm:h-6" fill="white" />
