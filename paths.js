@@ -6,4 +6,5 @@ export default {
   speedtask: "/games/sprint/tasks",
   audiocall: "/games/audiocall",
   audiocalltask: "/games/audiocall/tasks",
+  auth: "/authentication",
 };

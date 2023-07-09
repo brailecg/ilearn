@@ -23,6 +23,7 @@ const navLinksMobile = [
 ];
 
 const Nav = () => {
+  const [auth, setAuth] = useState(false);
   const [games, setGame] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
   const [navIcon, setNavIcon] = useState(true);
@@ -74,21 +75,37 @@ const Nav = () => {
             </div>
           </div>
         </div>
-        <div className="flex space-x-8 items-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="bg-component-cyanlight text-font-cyandark w-8 h-8 rounded-full flex justify-center items-center font-semibold">
-              A
-            </span>
-            <span className="text-font-greydark"> Alex</span>
-          </Link>
-          <Link
-            href="/"
-            aria-label="sign out"
-            className="font-semibold space-x-1 flex items-center">
-            <span> Sign out</span>
-            <ArrowSmallRightIcon className="w-4 h-4 font-semibold" />
-          </Link>
-        </div>
+        {auth ? (
+          <div className="flex space-x-8 items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              <span className="bg-component-cyanlight text-font-cyandark w-8 h-8 rounded-full flex justify-center items-center font-semibold">
+                A
+              </span>
+              <span className="text-font-greydark"> Alex</span>
+            </Link>
+            <Link
+              href="/"
+              aria-label="sign out"
+              className="font-semibold space-x-1 flex items-center">
+              <span> Sign out</span>
+              <ArrowSmallRightIcon className="w-4 h-4 font-semibold" />
+            </Link>
+          </div>
+        ) : (
+          <div className="flex space-x-8 items-center">
+            <Link
+              href={paths.auth}
+              className="font-semibold space-x-1 flex items-center">
+              <span> Login </span>
+              <ArrowSmallRightIcon className="w-4 h-4 font-semibold" />
+            </Link>
+            <Link
+              href={paths.auth}
+              className="p-2  bg-component-cyan rounded-lg text-white font-semibold">
+              <span> SignUp </span>
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="flex justify-between items-center px-5 py-2 md:hidden">
