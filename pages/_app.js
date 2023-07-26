@@ -5,7 +5,7 @@ import { Montserrat, Dela_Gothic_One } from "next/font/google";
 import { Amplify } from "aws-amplify";
 import config from "../aws-exports";
 
-import { AuthProvider } from "./services/authContext";
+import { AuthProvider } from "../services/authContext";
 
 Amplify.configure(config);
 

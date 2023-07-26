@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import Signup from "../../components/authentication/Signup";
 import Login from "../../components/authentication/Login";
-import { useAuthContext } from "../services/authContext";
+import { useAuthContext } from "../../services/authContext";
 
 const AwsAuth = () => {
   const { setAuthenticated } = useAuthContext();

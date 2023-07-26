@@ -8,7 +8,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Auth } from "aws-amplify";
 import paths from "../paths";
 
-import { useAuthContext } from "../pages/services/authContext";
+import { useAuthContext } from "../services/authContext";
 
 const navLinks = [
   { title: "Home", id: `${paths.home}` },
