@@ -5,8 +5,10 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/solid";
 import { Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-
+import { Auth } from "aws-amplify";
 import paths from "../paths";
+
+import { useAuthContext } from "../pages/services/authContext";
 
 const navLinks = [
   { title: "Home", id: `${paths.home}` },
@@ -22,8 +24,20 @@ const navLinksMobile = [
   { title: "Audio-call", id: `${paths.audiocall}` },
 ];
 
+async function handleSignOut(setAuthenticated) {
+  try {
+    await Auth.signOut();
+    console.log("User signed out successfully");
+    // Perform any additional actions after signing out
+    setAuthenticated(false);
+  } catch (error) {
+    console.error("Sign-out error:", error);
+  }
+}
+
 const Nav = () => {
-  const [auth, setAuth] = useState(false);
+  const { authenticated, setAuthenticated } = useAuthContext();
+
   const [games, setGame] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
   const [navIcon, setNavIcon] = useState(true);
@@ -75,7 +89,7 @@ const Nav = () => {
             </div>
           </div>
         </div>
-        {auth ? (
+        {authenticated ? (
           <div className="flex space-x-8 items-center">
             <Link href="/" className="flex items-center space-x-2">
               <span className="bg-component-cyanlight text-font-cyandark w-8 h-8 rounded-full flex justify-center items-center font-semibold">
@@ -83,24 +97,24 @@ const Nav = () => {
               </span>
               <span className="text-font-greydark"> Alex</span>
             </Link>
-            <Link
-              href="/"
+            <button
+              onClick={() => handleSignOut(setAuthenticated)}
               aria-label="sign out"
               className="font-semibold space-x-1 flex items-center">
               <span> Sign out</span>
               <ArrowSmallRightIcon className="w-4 h-4 font-semibold" />
-            </Link>
+            </button>
           </div>
         ) : (
           <div className="flex space-x-8 items-center">
             <Link
-              href={paths.auth}
+              href={{ pathname: paths.auth, query: { q: "login" } }}
               className="font-semibold space-x-1 flex items-center">
               <span> Login </span>
               <ArrowSmallRightIcon className="w-4 h-4 font-semibold" />
             </Link>
             <Link
-              href={paths.auth}
+              href={paths.auth + "?q=signup"}
               className="p-2  bg-component-cyan rounded-lg text-white font-semibold">
               <span> SignUp </span>
             </Link>
